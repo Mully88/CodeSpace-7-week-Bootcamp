@@ -1,6 +1,7 @@
 // Simon Mulligan
 //EC1964474
 
+
 // Students array with 5 students
 let students = [
     {name: "Alice", grade: 90},
@@ -26,14 +27,12 @@ function calculateAverage() {
     return total / students.length;
 }
 
-
 console.log("Initial students:");
 printAllStudents();
 console.log("Average grade:", calculateAverage());
 
-
 // Add a new student
-students.push({ name: "Frank", grade: 95 });
+students.push({ name: "Simon", grade: 90 });
 
 // Change the second student's grade to 85
 students[1].grade = 85;
@@ -41,4 +40,8 @@ students[1].grade = 85;
 // Print updated results
 console.log("\nUpdated students:");
 printAllStudents();
-console.log("New average grade:", calculateAverage());
+console.log("New average grade:", Math.round( calculateAverage()));
+
+
+
+
