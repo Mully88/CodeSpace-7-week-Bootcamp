@@ -1,0 +1,104 @@
+<!-- Simon Mulligan
+EC1964474
+ -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <title>Find The Treasure</title>
+    <style>
+        button {
+            margin: 10px;
+            padding: 10px 20px;
+            font-size: 16px;
+        }
+
+        #result, #score {
+            margin-top: 20px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+
+<body>
+    <h2>Pick a door!</h2>
+
+    <!-- Buttons for user choices -->
+    <button id="door1">Door 1</button>
+    <button id="door2">Door 2</button>
+    <button id="door3">Door 3</button>
+
+    <!-- Reset button -->
+    <button id="reset">Reset</button>
+
+    <!-- Display result -->
+    <div id="result"></div>
+
+    <!-- Display score -->
+    <div id="score"></div>
+
+    <script>
+        // Possible treasure locations
+        const choices = ["door1", "door2", "door3"];
+
+        // Running score
+        let wins = 0;
+        let losses = 0;
+
+        // Get all buttons
+        const buttons = document.querySelectorAll("button");
+
+        // Add event listeners to each button
+        buttons.forEach(button => {
+            button.addEventListener("click", () => {
+
+                // Ignore reset button here
+                if (button.id === "reset") return;
+
+                // Player's choice
+                const userChoice = button.id;
+
+                // NEW treasure door each round
+                const treasureDoor = choices[Math.floor(Math.random() * 3)];
+
+                // Determine result
+                const result = getWinner(userChoice, treasureDoor);
+
+                // Show result
+                document.getElementById("result").textContent =
+                    `You chose ${userChoice}. ${result}`;
+
+                // Update score
+                if (result.includes("WIN")) {
+                    wins++;
+                } else {
+                    losses++;
+                }
+
+                // Display score
+                document.getElementById("score").textContent =
+                    `Wins: ${wins} | Losses: ${losses}`;
+            });
+        });
+
+        // Reset button clears everything
+        document.getElementById("reset").addEventListener("click", () => {
+            document.getElementById("result").textContent = "";
+            document.getElementById("score").textContent = "";
+            wins = 0;
+            losses = 0;
+        });
+
+        // Determine winner
+        function getWinner(user, treasure) {
+            if (user === treasure) {
+                return `Treasure was behind ${treasure}. You WIN!`;
+            } else {
+                return `Treasure was behind ${treasure}. You lose.`;
+            }
+        }
+    </script>
+</body>
+
+</html>
