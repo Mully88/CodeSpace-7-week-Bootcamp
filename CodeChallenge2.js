@@ -27,11 +27,10 @@ const user2 = new User('Jane', 'Doe');
 
 // Say hello
 user2.hello();
+
  */
 
-
-
-/* //task 2
+ //task 2
 
  class User {
   constructor(firstName, lastName) {
@@ -74,8 +73,9 @@ user.lastNameValue = "Doe";
 
 // Output
 console.log(user.hello());
-console.log(`My name is ${user.firstNameValue} ${user.lastNameValue}`); */
+console.log(`My name is ${user.firstNameValue} ${user.lastNameValue}`); 
  
 
 
 
+ 
