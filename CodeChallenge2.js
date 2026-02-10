@@ -27,8 +27,8 @@ const user2 = new User('Jane', 'Doe');
 
 // Say hello
 user2.hello();
-
  */
+
 
  //task 2
 
