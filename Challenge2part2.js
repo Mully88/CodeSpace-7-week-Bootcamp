@@ -1,6 +1,6 @@
-/* //task 3
+//task 3
 
-// Superclass: User
+/* // Superclass: User
 class User {
   constructor() {
     this.username = "";
@@ -32,13 +32,13 @@ admin.setUsername = "Balthazar";
 // Output
 console.log(admin.expressYourRole());
 console.log(admin.sayHello());
- */
 
+ */
 
 //task 4
 
-// Base class: User
-/* class User {
+  Base class: User
+  class User {
   constructor() {
     this.numberOfArticles = 0;
   }
@@ -85,7 +85,7 @@ console.log("Editor scores:", editor.calcScores());
  */
 
 
-
+ */
 //task 5
 
 // Abstract class: User
